@@ -4,11 +4,6 @@
  * followed by a new line
  * Return: Always 0
  */
-int	_putchar(char c)
-{
-	write(0, &c, 1);
-}
-
 int main(void)
 {
 	char c[8] = "_putchar";
