@@ -5,4 +5,4 @@
 
 int _isupper(int c);
 
-#endif
+#endif /* MAIN_H */
