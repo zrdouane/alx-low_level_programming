@@ -7,7 +7,7 @@
 int	_isupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - 32);
+		return (1);
 	else
-		return (c);
+		return (0);
 }
