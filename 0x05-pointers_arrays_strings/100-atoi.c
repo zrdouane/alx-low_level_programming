@@ -1,29 +1,45 @@
 #include "main.h"
 /**
-* _atoi - changes a string to an int
+* _atoi - changes ascii to int
 * @s: the string to be changed
 *
 * Return: the converted int
 */
 int _atoi(char *s)
 {
-	int	resultat;
-	int	sign;
+	int i, d, n, len, f, digit;
 
-	resultat = 0;
-	sign = 1;
-	while (*s == 32 || (*s >= 9 && *s <= 13))
-		s++;
-	if (*s == '-' || *s == '+')
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
-		if (*s == '-')
-			sign *= -1;
-		s++;
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
 	}
-	while (*s >= '0' && *s <= '9')
-	{
-		resultat = resultat * 10 + (*s - '0');
-		s++;
-	}
-	return (resultat * sign);
+
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
