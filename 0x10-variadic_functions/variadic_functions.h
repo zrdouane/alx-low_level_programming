@@ -10,4 +10,8 @@ int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
+void _putchar(va_list arg);
+void _int(va_list arg);
+void _float(va_list arg);
+void _string(va_list arg);
 #endif
