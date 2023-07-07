@@ -1,0 +1,5 @@
+#!/bin/bash
+read input
+touch $input
+chmod 744 $input
+vi $input
